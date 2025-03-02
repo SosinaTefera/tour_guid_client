@@ -61,7 +61,6 @@ const Login = () => {
           Login
         </Typography>
         {error && <Alert severity="error">{error}</Alert>}{" "}
-        {/* Show error message */}
         <form onSubmit={handleSubmit}>
           <TextField
             label="Email"
