@@ -10,6 +10,10 @@ const Sidebar = () => {
         <ListItem button component={Link} to="/dashboard/tours">
           <ListItemText primary="Tours" />
         </ListItem>
+        <ListItem button component={Link} to="/dashboard/create-tour">
+          <ListItemText primary="Create Tour" />
+        </ListItem>
+ 
       </List>
     </Drawer>
   );

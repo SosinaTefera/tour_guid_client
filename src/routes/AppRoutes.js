@@ -4,6 +4,8 @@ import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import Dashboard from '../pages/dashboard/Dashboard';
 import Tours from '../pages/dashboard/Tours';
+import TourDetails from '../pages/dashboard/ToursDetail';
+import CreateTour from '../pages/dashboard/CreateTour';
 
 
 
@@ -15,7 +17,9 @@ const AppRoutes = () => {
       <Route path="dashboard" element={<Dashboard />}>
         <Route index element={<Tours />} />
         <Route path="tours" element={<Tours />} />
-     
+        <Route path="tours/:tourId" element={<TourDetails />} />
+        <Route path="create-tour" element={<CreateTour />} />
+
       </Route>
     </Routes>
   );
