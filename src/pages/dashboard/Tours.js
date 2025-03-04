@@ -35,7 +35,9 @@ const Tours = () => {
         }
     };
 
- 
+    const handleCardClick = (tour) => {
+        navigate(`/tours/${tour.id}`, { state: { tour } }); 
+    };
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -77,6 +79,7 @@ const Tours = () => {
                     <Grid item xs={12} sm={6} md={4} key={tour.id}>
                         <Card
                             sx={{ position: "relative", cursor: "pointer" }} 
+                            onClick={() => handleCardClick(tour)} 
                         >
                             <CardMedia
                                 component="img"
