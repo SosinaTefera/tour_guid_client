@@ -13,7 +13,9 @@ const Sidebar = () => {
         <ListItem button component={Link} to="/dashboard/create-tour">
           <ListItemText primary="Create Tour" />
         </ListItem>
- 
+        <ListItem button component={Link} to="/dashboard/analytics">
+          <ListItemText primary="Analytics" />
+        </ListItem>
       </List>
     </Drawer>
   );

@@ -19,7 +19,10 @@ const AppRoutes = () => {
         <Route path="tours" element={<Tours />} />
         <Route path="tours/:tourId" element={<TourDetails />} />
         <Route path="create-tour" element={<CreateTour />} />
-
+        <Route path="analytics" element={<AdminAnalytics />} />
+      </Route>
+      <Route path="/tours" element={<Tours />} />
+        <Route path="tours/:tourId" element={<TourDetails />} >
       </Route>
     </Routes>
   );
