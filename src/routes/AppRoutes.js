@@ -6,7 +6,7 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import Tours from '../pages/dashboard/Tours';
 import TourDetails from '../pages/dashboard/ToursDetail';
 import CreateTour from '../pages/dashboard/CreateTour';
-
+import AdminAnalytics from '../pages/AdminAnalytics';
 
 
 const AppRoutes = () => {
