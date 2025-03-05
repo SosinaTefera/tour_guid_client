@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, TextField, Button, Typography, CircularProgress } from "@mui/material";
 import api from "../../services/api"; 
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const CreateTour = () => {
   const [title, setTitle] = useState("");
@@ -11,7 +14,17 @@ const CreateTour = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const navigate=useNavigate()
+  const {user}=useAuth()
 
+  useEffect(()=>{
+    if(user.role !=='admin')
+      {
+        toast.error('Unauthorized User',{position:'top-right'})
+        return navigate(-1)
+      }
+  },[user,navigate])
+ 
   const handleImageChange = (event) => {
     setImage(event.target.files[0]);
   };
@@ -37,13 +50,26 @@ const CreateTour = () => {
          },
       });
 
-      alert("Tour created successfully!");
+      // alert("Tour created successfully!");
+      toast.success('Tour created successfully!',{
+       position:"top-right" 
+      })
       setTitle("");
       setDescription("");
       setPrice("");
       setImage(null);
+      setlatitude("");
+      setlongitude("");
+      setLoading(false);
+      // navigate(-1)
     } catch (err) {
       setError("Failed to create tour");
+      setTitle("");
+      setDescription("");
+      setPrice("");
+      setImage(null);
+      setlatitude("");
+      setlongitude("");
       console.error("Error:", err);
     } finally {
       setLoading(false);
@@ -51,7 +77,11 @@ const CreateTour = () => {
   };
 
   return (
-    <Container>
+    <Container sx={{
+      width: "80%",
+      mt:'20px'
+    }}>
+      <div><Toaster/></div>
       <Typography variant="h4" sx={{ mb: 3 }}>Create a New Tour</Typography>
       {error && <Typography color="error">{error}</Typography>}
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
