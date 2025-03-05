@@ -7,7 +7,7 @@ import Tours from '../pages/dashboard/Tours';
 import TourDetails from '../pages/dashboard/ToursDetail';
 import CreateTour from '../pages/dashboard/CreateTour';
 import AdminAnalytics from '../pages/AdminAnalytics';
-
+import Account from '../pages/dashboard/account';
 
 const AppRoutes = () => {
   return (
@@ -24,6 +24,8 @@ const AppRoutes = () => {
       <Route path="/tours" element={<Tours />} />
         <Route path="tours/:tourId" element={<TourDetails />} >
       </Route>
+      <Route path="account" element={<Account />} />
+
     </Routes>
   );
 };
