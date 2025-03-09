@@ -9,10 +9,15 @@ const Sidebar = () => {
     { text: "Analytics", path: "/dashboard", icon: <Dashboard /> },
     { text: "Tours", path: "/dashboard/tours_admin", icon: <Tour /> },
     { text: "Create Tour", path: "/dashboard/create-tour", icon: <AddCircle /> },
+    // { text: "Payment", path: "/dashboard/payment", icon: <AddCircle /> },
+    { text: "Booked Tours", path: "/dashboard/booked", icon: <BookmarkAdded /> },
+    { text: "Gallery", path: "/dashboard/gallery", icon: <BrowseGallery /> },
 
   ]:[
     { text: "Tours", path: "/dashboard/tours", icon: <Tour /> },
-
+    { text: "Gallery", path: "/dashboard/gallery", icon: <BrowseGallery /> },
+    { text: "Booked Tours", path: "/dashboard/booked", icon: <CalendarViewMonth /> },
+    // { text: "Payment", path: "/dashboard/payment", icon: <Payment /> },
     { text: "Account", path: "/dashboard/account", icon: <AccountBox /> },
   ];
 
