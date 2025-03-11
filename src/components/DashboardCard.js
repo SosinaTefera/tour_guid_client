@@ -14,7 +14,7 @@ const DashboardCards = () => {
   useEffect (() => {
     const fetchData = async () => {
       try {
-        const response = await api.get ('visualization/dashboard')
+        const response = await api.get ('/visualization/dashboard')
         
         setTotalData(response.data);
       } catch (err) {

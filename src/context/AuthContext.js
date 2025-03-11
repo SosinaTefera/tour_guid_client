@@ -76,10 +76,14 @@ export const AuthProvider = ({ children }) => {
     navigate("/login");
   };
 
+  const profile = () => {
+    navigate("/dashboard/account")
+  }
+
   // console.log("AuthContext.Provider",{" "}
   console.log({ user });
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading, register }}>
+    <AuthContext.Provider value={{ user, login, logout, loading, register, profile }}>
       {children}
     </AuthContext.Provider>
   );

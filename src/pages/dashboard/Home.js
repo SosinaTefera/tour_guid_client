@@ -19,7 +19,7 @@ const settings = ['Profile', 'Logout'];
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const {logout}=useAuth()
+  const {logout, profile}=useAuth()
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -40,6 +40,9 @@ function ResponsiveAppBar() {
     if(setting==='Logout'){
         
       logout()
+    }
+    if(setting==='Profile'){
+      profile()
     }
         setAnchorElUser(null);
 
