@@ -34,6 +34,7 @@ const Tours = () => {
   const handleDeleteTour = async tourId => {
     try {
       setDeleting (prev => ({...prev, [tourId]: true}));
+      console.log(`tour id is ${tourId}`)
       await api.delete (`/tour/${tourId}`);
       setTours (tours.filter (tour => tour.id !== tourId));
       toast.success ('Tour deleted successfully!');
