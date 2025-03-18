@@ -13,9 +13,7 @@ RUN npm install
 # Copy the entire application code
 COPY . .
 
-# Build the React app for production
-ARG REACT_APP_API_BASE_URL
-ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
+
 RUN npm run build
 
 # Install serve to serve the built app
