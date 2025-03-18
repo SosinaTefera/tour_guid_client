@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || "https://tour-guid-backend-326229981045.europe-southwest1.run.app", 
+  baseURL: "https://tour-guid-backend-326229981045.europe-southwest1.run.app", 
   headers: {
     "Content-Type": "application/json",
   },
