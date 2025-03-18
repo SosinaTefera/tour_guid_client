@@ -99,7 +99,7 @@ const Tours = () => {
   const handleConfirm=async()=>{
      
      try {
-       await api.post('/booking',{
+       await api.post('/booking/',{
          tour_id:selectedBooking.id,
          user_id:user.id,
          status:'pending'
@@ -176,17 +176,17 @@ const ConfirmationModal=({selectedBooking})=>{
                       height: '400px',
                     }}
                   >
-                    {/* <CardMedia
+                    <CardMedia
                       component="img"
                       height="200px"
                       image={
-                      // tour.image
-                      //    ||
+                      tour.image
+                         ||
                           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOaPnazUg5jb4P6OXyoOLIpUB7BRCx9iRWFg&s'
                       }
                       alt={tour.title}
                       onClick={() => handleCardClick (tour)}
-                    /> */}
+                    />
                     <CardContent>
                       <Typography
                         variant="h6"
