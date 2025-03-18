@@ -64,7 +64,7 @@ const Gallery = () => {
                   {images.map ((image, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index} bgcolor={'whitesmoke'} gap={'10px'}>
                       <img
-                        src={`${process.env.REACT_APP_API_BASE_URL}/${image.image_url}`}
+                        src={image.image_url}
                         alt={`gallery-img-${index}`}
                         style={{
                           width: '380px',

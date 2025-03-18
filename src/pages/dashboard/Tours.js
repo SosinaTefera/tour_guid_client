@@ -179,7 +179,7 @@ const ConfirmationModal=({selectedBooking})=>{
                       component="img"
                       height="200px"
                       image={
-                      `${process.env.REACT_APP_API_BASE_URL}/${tour.image}`
+                      tour.image
                          ||
                           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOaPnazUg5jb4P6OXyoOLIpUB7BRCx9iRWFg&s'
                       }
