@@ -55,7 +55,7 @@ const Tours = () => {
   useEffect (() => {
     const fetchTours = async () => {
       try {
-        const response = await api.get ('/tour');
+        const response = await api.get ('tour');
 
         setTours (response.data);
       } catch (error) {

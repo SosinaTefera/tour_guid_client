@@ -44,7 +44,7 @@ const CreateTour = () => {
       formData.append("image", image);
       const token = localStorage.getItem("token");
 
-      const response = await api.post("/tour", formData, {
+      const response = await api.post("tour", formData, {
         headers: { "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`
          },
