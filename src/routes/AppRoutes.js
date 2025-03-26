@@ -6,6 +6,7 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import Tours from '../pages/dashboard/Tours';
 import TourDetails from '../pages/dashboard/ToursDetail';
 import CreateTour from '../pages/dashboard/CreateTour';
+import EditTour from '../pages/dashboard/EditTour';
 import AdminAnalytics from '../pages/AdminAnalytics';
 import Account from '../pages/dashboard/account';
 import PrivateRoute from './PrivateRoute';
@@ -29,6 +30,7 @@ const AppRoutes = () => {
         <Route path="tours_admin" element={<Tours />} />
         <Route path="tours_admin/:tourId" element={<TourDetails />} />
         <Route path="create-tour" element={<CreateTour />} />
+        <Route path="edit-tour" element={<EditTour />} />
         <Route
           path="tours"
           element={
@@ -38,11 +40,10 @@ const AppRoutes = () => {
           }
         >
         </Route>
-          <Route path="tours/:tourId" element={<TourDetails />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="booked" element={<BookedPage />} />
-          <Route path="account" element={<Account />} />
-
+        <Route path="tours/:tourId" element={<TourDetails />} />
+        <Route path="gallery" element={<Gallery />} />
+        <Route path="booked" element={<BookedPage />} />
+        <Route path="account" element={<Account />} />
       </Route>
     </Routes>
   );

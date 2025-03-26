@@ -1,5 +1,5 @@
 # Use official Node.js runtime as base image
-FROM node:18-alpine
+FROM node:16-alpine
 
 # Set working directory in container
 WORKDIR /app
@@ -14,14 +14,13 @@ RUN npm install
 COPY . .
 
 # Build the React app for production
-
 RUN npm run build
 
-# Install serve to serve the built app
+# Install serve to run the production build
 RUN npm install -g serve
 
-# Expose port 8088 (matching Cloud Run's expectation)
-EXPOSE 8088
+# Expose port 8080 (matching Cloud Run's expectation)
+EXPOSE 8080
 
-# Command to run the application on port 8088
-CMD ["serve", "-s", "build", "-l", "8088"]
+# Command to run the application on port 8080
+CMD ["serve", "-s", "build", "-l", "8080"]

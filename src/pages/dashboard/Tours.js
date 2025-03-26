@@ -17,6 +17,7 @@ import {
 import {useNavigate} from 'react-router-dom'; // Import useNavigate
 import api from '../../services/api';
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import {useAuth} from '../../context/AuthContext';
 import toast, {Toaster} from 'react-hot-toast';
 import {CalendarMonth} from '@mui/icons-material';
@@ -144,6 +145,11 @@ const ConfirmationModal=({selectedBooking})=>{
     </Modal>
   )
 }
+
+const handleEditTour = (tour) => {
+  navigate('/dashboard/edit-tour', { state: { tour } });
+};
+
   return (
     <Box
       sx={{
@@ -240,26 +246,33 @@ const ConfirmationModal=({selectedBooking})=>{
                           </Tooltip>
 
                           {localStorage.getItem ('role') === 'admin'
-                            ? <IconButton
-                                sx={{
-                                  // position: 'a/bsolute',
-                                  // bottom: 8,
-                                  // right: 8,
-                                  color: 'red',
-                                }}
-                                onClick={e => {
-                                  e.stopPropagation (); // Prevent card click event
-                                  handleDeleteTour (tour.id);
-                                }}
-                                disabled={deleting[tour.id]}
-                              >
-                                {deleting[tour.id]
-                                  ? <CircularProgress
-                                      size={24}
-                                      sx={{color: 'red'}}
-                                    />
-                                  : <DeleteIcon />}
-                              </IconButton>
+                            ? <Box sx={{ display: 'flex', gap: 1 }}>
+                                <Tooltip title="Edit Tour">
+                                  <IconButton
+                                    sx={{ color: 'primary.main' }}
+                                    onClick={e => {
+                                      e.stopPropagation();
+                                      handleEditTour(tour);
+                                    }}
+                                  >
+                                    <EditIcon />
+                                  </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Delete Tour">
+                                  <IconButton
+                                    sx={{ color: 'red' }}
+                                    onClick={e => {
+                                      e.stopPropagation();
+                                      handleDeleteTour(tour.id);
+                                    }}
+                                    disabled={deleting[tour.id]}
+                                  >
+                                    {deleting[tour.id]
+                                      ? <CircularProgress size={24} sx={{color: 'red'}} />
+                                      : <DeleteIcon />}
+                                  </IconButton>
+                                </Tooltip>
+                              </Box>
                             : null}
                         </Box>
                       </Box>
